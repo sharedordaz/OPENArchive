@@ -1,29 +1,28 @@
 :root{
   /*Pallete. Colors from darker to lighter*/
-  --gray1: #545454;
-  --gray2: #69747C;
-  --green1: #6BAA75;
-  --green2: #84DD63;
-  --green3: #CBFF4D;
-
+  --beige: #EAF4D3;
+  --vanilla: #DBD8AE;
+  --mamey: #CA907E;
+  --red: #994636;
+  --orange-brown: #895B1E;
  /*Extra colors*/
   --medium-gray: #626868;
   --light-gray: #939196;
   --almost-white: #E5E5E5;
 
-  background-color: var(--green1);
+  background-color: var(--vanilla);
 }
 main{
-  background-color: var(--almost-white);
+  background-color: var(--beige);
   border: 1px solid var(--light-gray);
   padding: 1%;
 }
 h1, h2, h3, h4{
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--gray1);
+  color: var(--red);
 }
 
 p, i, em, label{
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--black);
+  color: black;
 }
