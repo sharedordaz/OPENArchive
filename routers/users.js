@@ -5,8 +5,8 @@ const path = require('path');
 const jsonparser = express.json();
 const urlparser = express.urlencoded({ extended: true });
 
-const registerForm = require('../controller/registerForm.js');
-const controller = require('../controllers/loggers.js');
+const registerForm = require('../controllers/registerForm.js');
+const controller = require('../controllers/users.js');
 
 
 
@@ -16,12 +16,11 @@ router.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, '../view/register.html'));
 })
 
-router.post('/', registerForm.registerNew);
+router.post('/register', registerForm.registerNew);
 //-----------------------------------------//
 
 
 router.get("/", controller.getAll);
-
 router.get("/:id", controller.getSingle);
 
 

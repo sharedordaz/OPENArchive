@@ -1,7 +1,7 @@
 const mongoclient = require("../db/connect.js");
 const ObjectId = require('mongodb').ObjectId;
 
-const register = require('../controller/registerForm.js');
+const register = require('../controllers/registerForm.js');
 
 const getAll = async (req, res, next) => {
   try {
