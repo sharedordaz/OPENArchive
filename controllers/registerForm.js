@@ -7,7 +7,7 @@ const ObjectId = require('mongodb').ObjectId;
 const path = require('path');
 //const fs = require('fs');
 
-//---------------------------//-
+//---------------------------//
 const DB_NAME = "OPENArchive";
 const COLLECTION = "users";
 //---------------------------//

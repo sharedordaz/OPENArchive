@@ -59,7 +59,7 @@
         }
       }
     },
-    "/loggers/register": {
+    "/users/register": {
       "get": {
         "description": "",
         "parameters": [],
@@ -68,9 +68,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/loggers/": {
+      },
       "post": {
         "description": "",
         "parameters": [
@@ -110,7 +108,9 @@
             "description": "Internal Server Error"
           }
         }
-      },
+      }
+    },
+    "/users/": {
       "get": {
         "description": "",
         "produces": [
@@ -124,7 +124,7 @@
         }
       }
     },
-    "/loggers/{id}": {
+    "/users/{id}": {
       "get": {
         "description": "",
         "produces": [
