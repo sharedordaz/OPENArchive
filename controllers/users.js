@@ -2,11 +2,15 @@ const mongoclient = require("../db/connect.js");
 const ObjectId = require('mongodb').ObjectId;
 
 const register = require('../controllers/registerForm.js');
+//---------------------------//-
+const DB_NAME = "OPENArchive";
+const COLLECTION = "users";
+//---------------------------//
 
 const getAll = async (req, res, next) => {
   try {
-    dbo = mongoclient.getDB().db("LDSForum");
-    collection = dbo.collection('users');
+    dbo = mongoclient.getDB().db(DB_NAME);
+    collection = dbo.collection(COLLECTION);
     result = await collection.find();
     resultArray = result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
@@ -22,7 +26,7 @@ const getSingle = async (req, res, next) => {
   try {
     //get GET userId (from URL) req.params = $_GET in PHP
     const userId = new ObjectId(req.params.id);
-    result = mongoclient.getDB().db("LDSForum").collection('users').find({ _id: userId })
+    result = mongoclient.getDB().db(DB_NAME).collection(COLLECTION).find({ _id: userId })
     await result.toArray().then((lists) => {
       console.log('Single Contact Data example: \nId: ' + lists[0]);
       res.setHeader('Content-Type', 'application/json');
@@ -59,7 +63,7 @@ const updateUsr = async (req, res, next) => {
 const delUsr = async (req, res, next) => {
   const userId = new ObjectId(req.params.id);
 
-  const collection = mongoclient.getDB().db("LDSForum").collection("users");
+  const collection = mongoclient.getDB().db(DB_NAME).collection(COLLECTION);
   const result = await collection.deleteOne({ _id: userId }, true);
 
   if (result.deletedCount > 0) {

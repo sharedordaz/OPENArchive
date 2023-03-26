@@ -7,6 +7,11 @@ const ObjectId = require('mongodb').ObjectId;
 const path = require('path');
 //const fs = require('fs');
 
+//---------------------------//-
+const DB_NAME = "OPENArchive";
+const COLLECTION = "users";
+//---------------------------//
+
 function ShowAccount(req, res) {
   var firstName = req.body.firstName;
   var lastName = req.body.lastName;
@@ -31,7 +36,7 @@ function registerNew(req, res) {
     description: req.body.description,
     password: req.body.password
   };
-  const collection = mongoclient.getDB().db("LDSForum").collection("users");
+  const collection = mongoclient.getDB().db(DB_NAME).collection(COLLECTION);
 
 
   const result = collection.insertOne(doc);
