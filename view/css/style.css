@@ -1,0 +1,29 @@
+:root{
+  /*Pallete. Colors from darker to lighter*/
+  --gray1: #545454;
+  --gray2: #69747C;
+  --green1: #6BAA75;
+  --green2: #84DD63;
+  --green3: #CBFF4D;
+
+ /*Extra colors*/
+  --medium-gray: #626868;
+  --light-gray: #939196;
+  --almost-white: #E5E5E5;
+
+  background-color: var(--green1);
+}
+main{
+  background-color: var(--almost-white);
+  border: 1px solid var(--light-gray);
+  padding: 1%;
+}
+h1, h2, h3, h4{
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--gray1);
+}
+
+p, i, em, label{
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--black);
+}

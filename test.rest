@@ -1,0 +1,26 @@
+
+https://ldsforum.onrender.com/loggers/<insert-id>
+
+"Content-Type", "application/json"
+
+POST: In register
+
+PUT STATEMENT:
+{
+  "firstName": "Franklin ",
+  "lastName": "Roosevelt",
+  "email": "frank@USA.com",
+  "age": "45",
+  "description": "New Deal",
+  "password": "UA7nKtRr4uXayNv"
+}
+OR
+{
+  "firstName": "Thomas ",
+  "lastName": "Jefferson",
+  "email": "tom@USA.com",
+  "age": "45",
+  "description": "Independence",
+  "password": "UA7nKtRr4uXayNv"
+}
+
