@@ -51,7 +51,7 @@ const updateUsr = async (req, res, next) => {
     password: req.body.password
   };
 
-  const collection = mongoclient.getDB().db("LDSForum").collection("users");
+  const collection = mongoclient.getDB().db(DB_NAME).collection(COLLECTION);
   const result = await collection.replaceOne({ _id: userId }, doc);
   if (result.modifiedCount > 0) {
     res.status(204).send("PUT request successful");

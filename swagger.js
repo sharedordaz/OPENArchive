@@ -2,10 +2,10 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'LDSForum Users API ',
-    description: 'Shows the users logged in LDSForum',
+    title: 'OPEN Archive API',
+    description: 'Shows bibliography of files',
   },
-  host: "https://ldsforum.onrender.com/",
+  host: "https://open-archive.onrender.com",
   basePath: "/",
   schemes: ['http', 'https'],
   produces: ['application/json']

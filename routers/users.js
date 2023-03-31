@@ -6,6 +6,7 @@ const jsonparser = express.json();
 const urlparser = express.urlencoded({ extended: true });
 
 const registerForm = require('../controllers/registerForm.js');
+const updateForm = require('../controllers/updateForm.js');
 const controller = require('../controllers/users.js');
 
 
@@ -18,7 +19,14 @@ router.get("/register", (req, res) => {
 
 router.post('/register', registerForm.registerNew);
 //-----------------------------------------//
+//TODO: Add ajax  in update.html and session
+router.get("/update", (req, res) => {
+  res.sendFile(path.join(__dirname, '../view/update.html'));
+})
 
+router.post('/update', updateForm.updateAcc);
+router.post('/delete', updateForm.delAcc);
+//---------------------------------------//
 
 router.get("/", controller.getAll);
 router.get("/:id", controller.getSingle);
