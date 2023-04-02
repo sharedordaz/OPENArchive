@@ -1,5 +1,6 @@
 //THIS IS THE MAIN ROUTER, IT REDIRECTS YOU TO OTHER ROUTERS
 const express = require("express");
+const { is } = require("express/lib/request.js");
 const router = require('express').Router();
 
 const path = require('path');
@@ -9,6 +10,12 @@ router.use("/", require('./home.js'));
 router.use("/auth", require('./home.js'));
 
 router.use("/users", require('./users.js'));
+
+router.use("/books", require('./books.js'));
+
+router.use("/talks", require('./talks.js'));
+
+router.use("/quotes", require('./quotes.js'));
 
 router.use("/images", require('./images.js'));
 

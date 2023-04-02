@@ -1,5 +1,5 @@
 Spread Factor: High
 Team Members:
 Shared Israel Ordaz Santillan
-Alain Solohery
+
 Application Name: OPEN Archive
