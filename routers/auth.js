@@ -8,13 +8,19 @@ var GitHubStrategy = require('passport-github').Strategy;
 
 const path = require('path');
 
-router.get("/", passport.authenticate('github'));
+router.get("/", passport.authenticate('github', { failureRedirect: '/error' }));
 
-router.get('/callback', passport.authenticate('github', { failureRedirect: '/login' }),
+router.get('/callback', passport.authenticate('github', { failureRedirect: '/auth/cancel' }),
   function(req, res) {
-
-    res.redirect("/");
+    res.redirect("/registered");
   }
 )
+router.get("/cancel", (req, res) => {
+  res.sendFile(path.join(__dirname, '../view/login.html'))
+});
+router.get("/registered", (req, res) => {
+  res.send("Registered sucessfuly");
+})
+router.get('/error', (req, res) => { res.send("Something went wrong") });
 
 module.exports = router;
