@@ -5,9 +5,14 @@ const router = require('express').Router();
 
 const path = require('path');
 
+
 router.use("/", require('./home.js'));
 
 router.use("/auth", require('./auth.js'));
+
+router.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, '../view/login.html'))
+});
 
 router.use("/users", require('./users.js'));
 
