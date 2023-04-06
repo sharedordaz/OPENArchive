@@ -16,11 +16,20 @@ router.get('/callback', passport.authenticate('github', { failureRedirect: '/aut
   }
 )
 router.get("/cancel", (req, res) => {
-  res.sendFile(path.join(__dirname, '../view/login.html'))
+  res.sendFile(path.join(__dirname, '../view/cancel.html'))
 });
+
 router.get("/registered", (req, res) => {
-  res.send("Registered sucessfuly");
+  res.sendFile(path.join(__dirname, '../view/login-ed.html'))
 })
+
+router.get("/logout", (req, res) => {
+  req.logout();
+  console.log("Logout successful");
+  res.redirect('/');
+})
+
+
 router.get('/error', (req, res) => { res.send("Something went wrong") });
 
 module.exports = router;

@@ -3,6 +3,16 @@ const connect = require('./db/connect.js');
 const port = 8000 || process.env.PORT;
 const app = express();
 
+const session = require('express-session');
+const dotenv = require('dotenv');
+dotenv.config();
+
+app.use(session({
+  secret: process.env.CLIENT_APP_SECRET,
+  resave: false,
+  saveUninitialized: false
+}));
+
 app
   //Because this .use doesnt have mount point (/), is sended to all the apps
   .use((req, res, next) => {

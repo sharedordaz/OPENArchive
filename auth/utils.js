@@ -21,15 +21,15 @@ passport.use(new GitHubStrategy({
     console.log(`ClientID: ${clientID}  Secret: ${secret}  CallbackURL: ${callback}`);
     User.insertOne({ githubId: profile.id, githubName: profile.username }, function(err, result) {
       if (err) { console.log(err); return cb(err); }
-
+      req.session.accessToken = accessToken;
       const user = { _id: result.insertedId, githubId: profile.id };
+
+
       return cb(null, user);
     });
-    /*  User.findOrCreate({ githubId: profile.id }, function(err, user) {
-        return cb(err, user);
-      });*/
   }
 ));
+
 
 
 
