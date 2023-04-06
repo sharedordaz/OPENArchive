@@ -41,6 +41,20 @@
       "get": {
         "description": "",
         "parameters": [],
+        "responses": {}
+      }
+    },
+    "/auth/callback": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/auth/cancel": {
+      "get": {
+        "description": "",
+        "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
@@ -48,7 +62,25 @@
         }
       }
     },
-    "/auth/css/style.css": {
+    "/auth/registered": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/auth/error": {
       "get": {
         "description": "",
         "parameters": [],
