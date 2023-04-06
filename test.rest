@@ -1,5 +1,5 @@
 
-https://ldsforum.onrender.com/loggers/<insert-id>
+PUT https://open-archive.onrender.com/users/<insert-id>
 
 "Content-Type", "application/json"
 
